@@ -1,20 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import TabNavigation from './src/app/screens/navigation/TabNavigation';
+import { NavigationContainer } from '@react-navigation/native';
+import { enableScreens } from 'react-native-screens';
+enableScreens();
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>KOKOKO</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer independent={true}  >
+         <StatusBar
+           animated={true}
+           backgroundColor="transparent"
+           barStyle={'dark-content'}
+           translucent={true}
+         />
+         <TabNavigation />
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
